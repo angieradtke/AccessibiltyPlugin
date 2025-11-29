@@ -1,6 +1,3 @@
-## Dokumentation der Änderungen an accessibility.js
-
-### English Documentation
 
 ## Changes Made to accessibility.js Between 13:50 and 18:53 Today
 
