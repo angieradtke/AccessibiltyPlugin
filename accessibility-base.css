@@ -1,0 +1,221 @@
+/* Accessibility Widget Base CSS */
+/* Static styles that don't require dynamic values */
+:root {
+	--accessibility-icon-color: #000;
+	--accessibility-icon-color-hover: green;
+}
+
+._access-scrollbar::-webkit-scrollbar-track,
+.mat-autocomplete-panel::-webkit-scrollbar-track,
+.mat-tab-body-content::-webkit-scrollbar-track,
+.mat-select-panel:not([class*='mat-elevation-z'])::-webkit-scrollbar-track,
+.mat-menu-panel::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #F5F5F5;
+}
+
+._access-scrollbar::-webkit-scrollbar,
+.mat-autocomplete-panel::-webkit-scrollbar,
+.mat-tab-body-content::-webkit-scrollbar,
+.mat-select-panel:not([class*='mat-elevation-z'])::-webkit-scrollbar,
+.mat-menu-panel::-webkit-scrollbar {
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+._access-scrollbar::-webkit-scrollbar-thumb,
+.mat-autocomplete-panel::-webkit-scrollbar-thumb,
+.mat-tab-body-content::-webkit-scrollbar-thumb,
+.mat-select-panel:not([class*='mat-elevation-z'])::-webkit-scrollbar-thumb,
+.mat-menu-panel::-webkit-scrollbar-thumb {
+	background-color: #999999;
+}
+
+.circular._access-icon {
+	border-radius: 50%;
+	border: .5px solid white;
+}
+
+.access-high-contrast * {
+	background-color: #000 !important;
+	background-image: none !important;
+	border-color: #fff !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	color: #fff !important;
+	text-indent: 0 !important;
+	text-shadow: none !important;
+}
+
+._access-menu.close {
+	z-index: -1;
+	width: 0;
+	opacity: 0;
+	background-color: transparent;
+}
+
+._access-menu.bottom {
+	bottom: 0;
+}
+
+._access-menu.top {
+	top: 0;
+}
+
+._access-menu.left {
+	left: 0;
+}
+
+._access-menu.right {
+	right: 0;
+}
+
+._access-menu ._text-center {
+	text-align: center;
+}
+
+._access-menu h3 {
+	font-size: 24px !important;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 0;
+	color: rgba(0, 0, 0, .87);
+	letter-spacing: initial !important;
+	word-spacing: initial !important;
+}
+
+._access-menu ._menu-close-btn {
+	left: 5px;
+	color: #d63c3c;
+	transition: .3s ease;
+	transform: rotate(0deg);
+}
+
+._access-menu ._menu-reset-btn {
+	right: 5px;
+	color: #4054b2;
+	transition: .3s ease;
+	transform: rotate(0deg);
+}
+
+._access-menu ._menu-btn {
+	position: absolute;
+	top: 5px;
+	cursor: pointer;
+	font-size: 24px !important;
+	font-weight: bold;
+	background: transparent;
+	border: none;
+	padding: 0;
+	margin: 0;
+	font-family: inherit;
+}
+
+._access-menu ._menu-btn:focus {
+	outline: 2px solid #4054b2;
+	outline-offset: 2px;
+}
+
+._access-menu ul {
+	padding: 0;
+	position: relative;
+	font-size: 18px !important;
+	margin: 0;
+	overflow: auto;
+	max-height: calc(100vh - 77px);
+}
+
+._access-menu ul li {
+	padding: 0
+}
+
+._access-menu ul li button {
+	background: transparent;
+	border: 0;
+	width: 100%;
+	display: flex;
+	gap: 18px;
+	align-items: center;
+	padding: 10px
+}
+
+._access-menu ul li svg {
+	width: 32px !important;
+	height: 32px !important;
+	
+	
+}
+
+
+html._access_cursor * {
+	cursor: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIyOS4xODhweCIgaGVpZ2h0PSI0My42MjVweCIgdmlld0JveD0iMCAwIDI5LjE4OCA0My42MjUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI5LjE4OCA0My42MjUiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0Q5REFEOSIgc3Ryb2tlLXdpZHRoPSIxLjE0MDYiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRzPSIyLjgsNC41NDkgMjYuODQ3LDE5LjkwMiAxNi45NjQsMjIuNzAxIDI0LjIzOSwzNy43NDkgMTguMjc4LDQyLjAxNyA5Ljc0MSwzMC43MjQgMS4xMzgsMzUuODA5ICIvPjxnPjxnPjxnPjxwYXRoIGZpbGw9IiMyMTI2MjciIGQ9Ik0yOS4xNzUsMjEuMTU1YzAuMDcxLTAuNjEzLTAuMTY1LTEuMjUzLTAuNjM1LTEuNTczTDIuMTY1LDAuMjU4Yy0wLjQyNC0wLjMyLTAuOTg4LTAuMzQ2LTEuNDM1LTAuMDUzQzAuMjgyLDAuNDk3LDAsMS4wMywwLDEuNjE3djM0LjE3MWMwLDAuNjEzLDAuMzA2LDEuMTQ2LDAuNzc2LDEuNDM5YzAuNDcxLDAuMjY3LDEuMDU5LDAuMjEzLDEuNDgyLTAuMTZsNy40ODItNi4zNDRsNi44NDcsMTIuMTU1YzAuMjU5LDAuNDgsMC43MjksMC43NDYsMS4yLDAuNzQ2YzAuMjM1LDAsMC40OTQtMC4wOCwwLjcwNi0wLjIxM2w2Ljk4OC00LjU4NWMwLjMyOS0wLjIxMywwLjU2NS0wLjU4NiwwLjY1OS0xLjAxM2MwLjA5NC0wLjQyNiwwLjAyNC0wLjg4LTAuMTg4LTEuMjI2bC02LjM3Ni0xMS4zODJsOC42MTEtMi43NDVDMjguNzA1LDIyLjI3NCwyOS4xMDUsMjEuNzY4LDI5LjE3NSwyMS4xNTV6IE0xNi45NjQsMjIuNzAxYy0wLjQyNCwwLjEzMy0wLjc3NiwwLjUwNi0wLjk0MSwwLjk2Yy0wLjE2NSwwLjQ4LTAuMTE4LDEuMDEzLDAuMTE4LDEuNDM5bDYuNTg4LDExLjc4MWwtNC41NDEsMi45ODVsLTYuODk0LTEyLjMxNWMtMC4yMTItMC4zNzMtMC41NDEtMC42NC0wLjk0MS0wLjcyYy0wLjA5NC0wLjAyNy0wLjE2NS0wLjAyNy0wLjI1OS0wLjAyN2MtMC4zMDYsMC0wLjU4OCwwLjEwNy0wLjg0NywwLjMyTDIuOCwzMi41OVY0LjU0OWwyMS41OTksMTUuODA2TDE2Ljk2NCwyMi43MDF6Ii8+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==), auto !important;
+}
+
+._access-menu ul.before-collapse li {
+	opacity: 0.05;
+}
+
+._access-menu ul li.active,
+._access-menu ul li.active:hover {
+	color: #fff;
+	background-color: #000;
+}
+
+._access-menu ul li:hover {
+	color: rgba(0, 0, 0, .8);
+	background-color: #eaeaea;
+}
+
+._access-menu ul li.not-supported {
+	display: none;
+}
+
+._access-menu ul li svg#decreaseTextSpacing path,
+._access-menu ul li svg#increaseTextSpacing {
+	stroke: var(--accessibility-icon-color);
+	stroke-width: 2, 5;
+}
+
+._access-menu ul li svg path {
+	fill: var(--accessibility-icon-color)
+}
+
+._access-menu ul li:hover svg path {
+	fill: var(--accessibility-icon-hover-color)
+}
+
+._access-menu ul li.active svg path {
+	fill: #fff;
+}
+
+._access-menu ul li:hover:before {
+	color: rgba(0, 0, 0, .8);
+}
+
+._access-menu ul li.active:before {
+	color: #fff;
+}
+
+
+._access-menu ul li:has(_access-text-spacing-range) {
+	margin-bottom: 36px
+}
+
+._access-range-label {
+	padding: 12px;
+	font-size: 0.8em;
+	font-weight: normal
+}
+
+.screenreader-only {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0 0 0 0) !important; /* deprecated but widely supported */
+	clip-path: inset(50%) !important; /* modern fallback */
+	white-space: nowrap !important;
+	border: 0 !important;
+}
