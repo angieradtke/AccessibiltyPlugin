@@ -125,6 +125,8 @@ loadStaticCSS() {
 ```
 
 **Enhanced Button Styling:**
+
+Starting with custom properties
 ```css
 ._access-menu-button {
     display: flex;
@@ -139,95 +141,3 @@ loadStaticCSS() {
 ```
 
 ---
-
-### Deutsche Dokumentation
-
-## Änderungen an accessibility.js zwischen 13:50 und 18:53 heute
-
-### Dateistatistiken
-- **Vorherige Version (14:32:45)**: 895 Zeilen, 67.151 Bytes
-- **Aktuelle Version (18:53:16)**: 1.438 Zeilen, 75.708 Bytes
-- **Änderung**: +543 Zeilen, +8.557 Bytes (erhebliche Erweiterung)
-
-### Hauptstrukturelle Änderungen
-
-#### 1. **Komplette CSS-Architektur-Umstrukturierung**
-
-**Vorher (13:50 Version):**
-- Gesamtes CSS als riesiger String in JavaScript eingebettet (12.669+ Zeichen)
-- Alles in einer `injectCss()` Methode
-
-**Nachher (18:53 Version):**
-- **Aufgeteiltes CSS-System**: Statisches CSS (externe Datei) + dynamisches CSS (generiert)
-- **Neue `loadStaticCSS()` Methode**: Lädt externe `accessibility-base.css` Datei
-- **Neue `generateDynamicCSS()` Methode**: Erstellt CSS basierend auf Konfiguration
-
-#### 2. **Völlig neues Menü-Design**
-
-**Wichtigste UI-Änderungen:**
-
-**Vorher:** Einzelne Buttons für Textgröße und -abstand
-- Separate Buttons für "Text vergrößern/verkleinern"
-- Separate Buttons für "Textabstand vergrößern/verkleinern"
-
-**Nachher:** Range-Slider für kontinuierliche Kontrolle
-- **Textgröße-Slider**: Bereich von -200% bis +200% (Werte -10 bis +10)
-- **Textabstand-Slider**: Bereich von -600% bis +600% (Werte -6 bis +6)
-- **Visuelle Verbesserungen**: Farbkodierte Slider mit Gradient-Hintergründen
-
-#### 3. **Verbesserte Barrierefreiheit**
-
-**Neue ARIA-Unterstützung:**
-- `role="slider"` für Range-Inputs
-- Verbesserte `aria-label` Beschreibungen
-- Bessere Tastaturnavigation
-- Erweiterte Screenreader-Kompatibilität
-
-**Semantische HTML-Verbesserungen:**
-- Wechsel von `<i>` zu `<button>` Elementen
-- Proper HTML-Struktur für bessere Zugänglichkeit
-- Verbesserte Fokus-Verwaltung
-
-#### 4. **Neue CSS-Features**
-
-**Range-Slider-Styling:**
-- Farbkodierte Hintergründe für verschiedene Bereiche
-- Benutzerdefinierte Thumb-Styles
-- Hover- und Fokus-Effekte
-- Responsive Design
-
-**Verbesserte Button-Styles:**
-- Flexbox-Layout für bessere Ausrichtung
-- Verbesserte Fokus-Indikatoren
-- Konsistente Hover-Effekte
-
-#### 5. **Technische Verbesserungen**
-
-**Code-Organisation:**
-- Modularere Struktur mit separaten Methoden
-- Bessere Wartbarkeit durch CSS-Trennung
-- Verbesserte Performance durch externe CSS-Datei
-
-**Entwicklerfreundlichkeit:**
-- CSS ist jetzt in separater Datei editierbar
-- Dynamisches CSS wird zur Laufzeit generiert
-- Bessere Debugging-Möglichkeiten
-
-### Zusammenfassung der Auswirkungen
-
-**Für Benutzer:**
-- **Bessere Benutzerfreundlichkeit**: Slider statt Buttons für präzisere Kontrolle
-- **Verbesserte Zugänglichkeit**: Bessere Screenreader-Unterstützung
-- **Moderneres Design**: Zeitgemäße UI-Elemente
-
-**Für Entwickler:**
-- **Wartbarkeit**: CSS ist jetzt in separaten Dateien organisiert
-- **Flexibilität**: Dynamisches CSS basierend auf Konfiguration
-- **Performance**: Externe CSS-Datei kann gecacht werden
-
-**Dateien betroffen:**
-- `accessibility.js` (Hauptdatei - komplett überarbeitet)
-- `accessibility-base.css` (neue externe CSS-Datei)
-- Backup-Dateien erstellt für Versionskontrolle
-
-Diese Änderungen stellen eine erhebliche Modernisierung und Verbesserung des Accessibility-Widgets dar, mit Fokus auf bessere Benutzerfreundlichkeit, Wartbarkeit und Barrierefreiheit.
